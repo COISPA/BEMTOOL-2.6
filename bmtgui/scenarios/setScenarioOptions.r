@@ -28,7 +28,7 @@ if (scenario_numb >0 & scenario_numb <=12) {
 
 
  colnames(final_mat) <- paste("col", 1:6, sep="")
- levels( mat_cfg_scenario_settings_fore[,2]) <- factor( unique(c(levels( mat_cfg_scenario_settings_fore[,2]), scenario_numb) )         )
+ levels( mat_cfg_scenario_settings_fore[,2]) <<- factor( unique(c(levels( mat_cfg_scenario_settings_fore[,2]), scenario_numb) )         )
  mat_cfg_scenario_settings_fore[2,2] <<- scenario_numb 
 levels( mat_cfg_scenario_settings_fore[,3]) <<- factor(c(levels( mat_cfg_scenario_settings_fore[,3]), gtkEntryGetText(bmt_entry_scenario_name)))         
  mat_cfg_scenario_settings_fore[2,3] <<-  gtkEntryGetText(bmt_entry_scenario_name) 

@@ -12,7 +12,7 @@
 
 loadScenariocfg <- function(path) {
 # if (printOK) if (printOK)   print('Calling function: loadScenariocfgpath) {')
-	# path = "C:/BEMTOOL-ver2.1-2016_14042016_ultima/bmtconfig scenario - Copia.csv"
+	# path = "C:\\INPUT\\bmtconfigForecast_SQ_Sel.csv"
  all_CFG_mat <- try(data.frame(read.csv(path, sep=";",  header=F, na.strings = ""), stringsAsFactors=F))
  
 EFFORT_NUMBER_list_fore <<- list()

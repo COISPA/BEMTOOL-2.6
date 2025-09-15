@@ -14,6 +14,7 @@ library(FLasher)
    
 rm(list=ls(all=TRUE))
 
+BMT_HR_TAC_BESC_FCAP_STRATEGY<<-FALSE
 
 source("C:\\Training\\BMT_Nov2024\\src\\biol\\bmtALADYM\\ALADYM-ver12.3-2017_0501\\src\\RFSS_env.r")
 

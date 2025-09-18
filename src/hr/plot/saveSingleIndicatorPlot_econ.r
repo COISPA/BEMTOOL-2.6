@@ -56,6 +56,8 @@ for (ind in 1:length(indicators_to_plot_names)) {
 
 one_indicator <- Indicators_to_plot[as.character(Indicators_to_plot$Variable) == indicators_to_plot_names[ind] & as.numeric(as.character(Indicators_to_plot$Year)) %in% all_the_years, ]
 
+one_indicator[which(as.character(one_indicator$Value) %in% c("-Inf","NaN","Inf")),"Value"]="NA"
+
 if ( indicators_to_plot_names[ind] != "VESSELS.annual" & indicators_to_plot_names[ind] !=  "DAYS.annual") {
 if (exists("one_indicator_inf")) {
 rm(one_indicator_inf)
@@ -160,14 +162,14 @@ if (phase == "FORECAST" & exists("one_indicator_fl_inf") ) {
                 }
 }
 
-if (is.na(min_y)) {
+if (is.na(min_y) | min_y==-Inf) {
 min_y <- 0
 } else {
 min_y  <- ifelse(min_y<0, min_y, 0)
 }
 
 
-if (is.na(max_y)) {
+if (is.na(max_y)| max_y==Inf) {
 max_y <- 0
 } 
 
@@ -228,4 +230,4 @@ dev.off()
 }
  
  
- # saveSingleIndicatorPlot(years, name_bioind, name_pressind)                       
+                     
